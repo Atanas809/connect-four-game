@@ -98,3 +98,70 @@ def apply_move(board, current_player, make_move, free_rows):
         free_rows[position] -= 1
 
     return board
+
+
+
+def is_valid_move(move, cols):
+
+    return 1 <= move <= cols
+
+def make_board(rows, cols):
+
+    return [[0] * cols for _ in range(rows)]
+
+
+def play(board):
+
+    current_player = 1
+
+    free_rows = get_free_rows(board, cols)
+
+    while True:
+
+        make_move = input(f"Player {current_player}, please choose a column between [1-7]: ")
+
+        if make_move.isdigit():
+            make_move = int(make_move)
+            if is_valid_move(make_move, cols):
+                board = apply_move(board, current_player, make_move, free_rows)
+                print_board(board)
+                if is_winning(board, current_player, make_move, free_rows, rows, cols):
+                    print(f"The winner is player {current_player}")
+                    break
+            else:
+                print("Please enter a valid column between [1-7]")
+                continue
+
+        else:
+            print("Please enter a valid number, MUST BE INTEGER !!!")
+            continue
+
+        if current_player == 2:
+            current_player = 1
+            continue
+
+        current_player += 1
+
+
+rows, cols = 6, 7
+board = make_board(rows, cols)
+play(board)
+# test = [
+#     [0, 0, 0, 0, 0, 1, 0],
+#     [0, 0, 0, 0, 0, 1, 4],
+#     [1, 0, 0, 1, 0, 1, 4],
+#     [1, 0, 1, 2, 0, 1, 4],
+#     [1, 1, 1, 1, 5, 1, 4],
+#     [1, 2, 2, 2, 5, 1, 2],
+# ]
+# 1
+# 2
+# 2
+# 3
+# 3
+# 7
+# 3
+# 4
+# 4
+# 4
+# 4
