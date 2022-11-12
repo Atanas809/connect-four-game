@@ -16,3 +16,10 @@ def find_from_board(value, board):
     for x in value:
         str_value = str(board[x[0]][x[1]])
         output += str_value
+
+    return output
+
+def is_winning(board, current_player, make_move, free_rows,rows, cols):
+
+    row = free_rows[make_move - 1]
+    col = make_move - 1
