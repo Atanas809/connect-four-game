@@ -1,5 +1,4 @@
 def is_valid_indices(value, rows, cols):
-
     valid = []
 
     for index in value:
@@ -10,7 +9,6 @@ def is_valid_indices(value, rows, cols):
     return valid
 
 def find_from_board(value, board):
-
     output = ""
 
     for x in value:
@@ -20,7 +18,6 @@ def find_from_board(value, board):
     return output
 
 def is_winning(board, current_player, make_move, free_rows,rows, cols):
-
     row = free_rows[make_move - 1]
     col = make_move - 1
 
@@ -69,5 +66,9 @@ def is_winning(board, current_player, make_move, free_rows,rows, cols):
 
 
 def print_board(board):
-
     return [print(row) for row in board]
+
+def get_free_rows(board, cols):
+    free_spaces = [0] * cols
+
+    index = 0
