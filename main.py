@@ -66,3 +66,8 @@ def is_winning(board, current_player, make_move, free_rows,rows, cols):
         result = find_from_board(valid_values, board)
         if need_to_win in result:
             return True
+
+
+def print_board(board):
+
+    return [print(row) for row in board]
