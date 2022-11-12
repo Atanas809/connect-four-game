@@ -72,3 +72,7 @@ def get_free_rows(board, cols):
     free_spaces = [0] * cols
 
     index = 0
+
+    for row in range(len(board[0])):
+        next_row = 0
+        next_col = index
