@@ -12,3 +12,7 @@ def is_valid_indices(value, rows, cols):
 def find_from_board(value, board):
 
     output = ""
+
+    for x in value:
+        str_value = str(board[x[0]][x[1]])
+        output += str_value
