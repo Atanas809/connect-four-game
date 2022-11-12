@@ -62,3 +62,7 @@ def is_winning(board, current_player, make_move, free_rows,rows, cols):
 
     for key, value in winning_paths.items():
         need_to_win = str(current_player) * 4
+        valid_values = is_valid_indices(value, rows, cols)
+        result = find_from_board(valid_values, board)
+        if need_to_win in result:
+            return True
