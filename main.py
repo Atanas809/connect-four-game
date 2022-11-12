@@ -87,3 +87,14 @@ def get_free_rows(board, cols):
 
 
     return free_spaces
+
+def apply_move(board, current_player, make_move, free_rows):
+
+    position = make_move - 1
+
+    if free_rows[position] > 0:
+        last_free_row = free_rows[position] - 1
+        board[last_free_row][position] = current_player
+        free_rows[position] -= 1
+
+    return board
