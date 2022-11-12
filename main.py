@@ -59,3 +59,6 @@ def is_winning(board, current_player, make_move, free_rows,rows, cols):
         ]
 
     }
+
+    for key, value in winning_paths.items():
+        need_to_win = str(current_player) * 4
