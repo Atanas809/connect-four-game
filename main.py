@@ -82,3 +82,8 @@ def get_free_rows(board, cols):
                 next_row += 1
             else:
                 break
+
+        index += 1
+
+
+    return free_spaces
