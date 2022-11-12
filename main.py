@@ -43,3 +43,10 @@ def is_winning(board, current_player, make_move, free_rows,rows, cols):
             [4, col],
             [5, col],
         ],
+        "main_ diagonal": [
+            [row, col],
+            [row + 1, col + 1],
+            [row + 2, col + 2],
+            [row + 3, col + 3],
+
+        ],
