@@ -23,3 +23,15 @@ def is_winning(board, current_player, make_move, free_rows,rows, cols):
 
     row = free_rows[make_move - 1]
     col = make_move - 1
+
+
+    winning_paths = {
+        "horizontal": [
+            [row, 0],
+            [row, 1],
+            [row, 2],
+            [row, 3],
+            [row, 4],
+            [row, 5],
+            [row, 6],
+        ],
