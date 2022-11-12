@@ -76,3 +76,9 @@ def get_free_rows(board, cols):
     for row in range(len(board[0])):
         next_row = 0
         next_col = index
+        while next_row <= len(board) - 1:
+            if board[next_row][next_col] == 0:
+                free_spaces[next_col] += 1
+                next_row += 1
+            else:
+                break
